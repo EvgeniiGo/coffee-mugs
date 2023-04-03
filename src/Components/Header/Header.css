@@ -1,0 +1,151 @@
+.header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  gap: 20px;
+  position: relative;
+  min-width: 320px;
+  width: 100vw;
+  max-width: 940px;
+}
+
+.header::before {
+  content: "";
+}
+.header::after {
+  content: "";
+}
+
+.header__logo {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.header__logo-image {
+  max-width: 112px;
+  width: 100%;
+}
+
+.header__cart {
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.header__cart:hover {
+  opacity: 1;
+}
+
+.header__cart-icon {
+  width: 16px;
+  object-fit: contain;
+  margin: 0 4px 2px 0;
+}
+
+.header__cart-text {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  color: #1d1f2e;
+  letter-spacing: 2px;
+}
+
+.header__cart-counter {
+  background-color: #1d1f2e;
+  padding: 0 6px;
+  border-radius: 9px;
+  color: white;
+  font-size: 11px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.header__button {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.header_button-image {
+  width: 20px;
+  object-fit: contain;
+}
+
+.nav {
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  display: none;
+  background-color: white;
+  margin-top: 51px;
+  align-items: center;
+}
+
+.nav_opened {
+  display: flex;
+}
+
+.nav__link {
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+.nav__link:hover {
+  opacity: 1;
+}
+
+.nav__link_active {
+  opacity: 1;
+}
+
+@media screen and (min-width: 479px) {
+}
+
+@media screen and (min-width: 768px) {
+  .header__logo {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .header {
+    padding: 25px 0;
+  }
+
+  .header__button {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    margin-top: 0;
+    width: auto;
+  }
+
+  .nav__link {
+    margin-right: 30px;
+    padding: 4px 0;
+  }
+
+  .header__cart-icon {
+    width: 16px;
+    object-fit: contain;
+    margin-right: 10px;
+  }
+
+  .header__cart-counter {
+    margin-left: 8px;
+  }
+}
