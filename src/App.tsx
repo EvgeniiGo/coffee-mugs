@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
+import Subscription from "./Components/Subscription/Subscription";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
       </Routes>
+      <Subscription />
       <Footer />
     </>
   );
