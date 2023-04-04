@@ -69,5 +69,6 @@
     min-width: 880px;
     max-width: 1440px;
     background-size: 940px;
+    padding: 0 30px;
   }
 }
