@@ -1,6 +1,6 @@
 import logo from "../../images/logo.png";
 import "./Footer.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,21 +16,21 @@ const Footer = () => {
       <div className="footer__column">
         <h3 className="footer__column-title">Menu</h3>
         <nav className="footer__links">
-          <NavLink className="footer__link" to="/">
+          <Link className="footer__link" to="/">
             Home
-          </NavLink>
-          <NavLink className="footer__link" to="/products">
+          </Link>
+          <Link className="footer__link" to="/products">
             Our products
-          </NavLink>
-          <NavLink className="footer__link" to="/blog">
+          </Link>
+          <Link className="footer__link" to="/blog">
             Blog
-          </NavLink>
-          <NavLink className="footer__link" to="/about">
+          </Link>
+          <Link className="footer__link" to="/about">
             About
-          </NavLink>
-          <NavLink className="footer__link" to="/contact">
+          </Link>
+          <Link className="footer__link" to="/contact">
             Contact
-          </NavLink>
+          </Link>
         </nav>
       </div>
       <div className="footer__column">
