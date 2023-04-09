@@ -9,7 +9,6 @@ const ProductCard = ({ id, name, price, oldPrice = undefined }: PropsType) => {
     `../../images/products/${id}.jpg`,
     import.meta.url
   ).href;
-  console.log(img);
 
   return (
     <div className="product-card">

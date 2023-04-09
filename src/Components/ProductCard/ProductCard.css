@@ -9,11 +9,11 @@
 
 .product-card__image-container {
   position: relative;
-  cursor: pointer;
 }
 
 .product-card__image {
   width: 100%;
+  cursor: pointer;
 }
 
 .product-card__button {
@@ -30,6 +30,14 @@
   cursor: pointer;
 }
 
+.product-card__image:hover + .product-card__button {
+  opacity: 1;
+}
+
+.product-card__button:hover {
+  opacity: 0.95;
+}
+
 .product-card__on-sale {
   position: absolute;
   top: 10px;
@@ -42,10 +50,6 @@
   line-height: 28px;
   color: #a25f4b;
   background-color: white;
-}
-
-.product-card__image-container:hover > .product-card__button {
-  opacity: 1;
 }
 
 .product-card__name {

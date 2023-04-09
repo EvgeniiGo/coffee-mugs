@@ -4,13 +4,16 @@ import "./Main.css";
 import FeaturedMugs from "../FeaturedMugs/FeaturedMugs";
 import MoreProducts from "../MoreProducts/MoreProducts";
 import Offer from "../Offer/Offer";
+import Stories from "../Stories/Stories";
 import { Mug } from "../../data/Products";
+import { Post } from "../../data/Posts";
 
 type PropsType = {
   mugs: Mug[];
+  posts: Post[];
 };
 
-const Main = ({ mugs }: PropsType) => {
+const Main = ({ mugs, posts }: PropsType) => {
   return (
     <>
       <Intro />
@@ -22,6 +25,8 @@ const Main = ({ mugs }: PropsType) => {
         <MoreProducts mugs={mugs.slice(0, 9)} />
         <Offer />
       </div>
+      <section className="parallax" />
+      <Stories posts={[posts[3], posts[2], posts[0]]} />
     </>
   );
 };

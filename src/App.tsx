@@ -10,6 +10,7 @@ import Contact from "./Components/Contact/Contact";
 import Subscription from "./Components/Subscription/Subscription";
 import Footer from "./Components/Footer/Footer";
 import { Mug, products } from "./data/Products";
+import { Post, posts } from "./data/Posts";
 
 function App() {
   const [viewCart, setViewCart] = useState([]);
@@ -19,7 +20,7 @@ function App() {
       {/* <Header viewCart={viewCart} setViewCart={setViewCart} /> */}
       <Header />
       <Routes>
-        <Route path="/" element={<Main mugs={products} />} />
+        <Route path="/" element={<Main mugs={products} posts={posts} />} />
       </Routes>
       <Routes>
         <Route path="/products" element={<Products />} />
