@@ -29,6 +29,8 @@ const History = () => {
             about the blind texts it is an almost unorthographic life One day
             however a small line of blind text by the name of Lorem Ipsum.
           </p>
+          <div className="history__hLine" />
+          <div className="history__vLine" />
         </div>
         <div className="history__post">
           <div className="history__number">02</div>
@@ -40,11 +42,15 @@ const History = () => {
             about the blind texts it is an almost unorthographic life One day
             however a small line of blind text by the name of Lorem Ipsum.
           </p>
+          <div className="history__hLine" />
+          <div className="history__vLine" />
         </div>
         <div className="history__post">
           <div className="history__number">01</div>
           <p className="history__label">November 2017</p>
           <h5 className="history__title">We've started CoffeeStyle.</h5>
+          <div className="history__hLine" />
+          <div className="history__vLine" />
         </div>
       </div>
     </section>
