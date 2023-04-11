@@ -23,6 +23,17 @@
   background-size: cover;
 }
 
+.about__parallax {
+  height: 340px;
+  background-image: url("../../images/about/parallax.jpg");
+  width: 100vw;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+}
+
 @media screen and (min-width: 992px) {
   .about {
     padding: 0 30px;

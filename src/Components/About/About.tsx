@@ -2,6 +2,7 @@ import "./About.css";
 import Intro from "../Intro/Intro";
 import Introductions from "../Introductions/Introductions";
 import Authors from "../Authors/Authors";
+import History from "../History/History";
 import { Person } from "../../data/People";
 
 type PropsType = {
@@ -19,6 +20,8 @@ const About = ({ authors }: PropsType) => {
         <div className="about__image" />
         <Introductions />
         <Authors authors={authors} />
+        <section className="about__parallax" />
+        <History />
       </div>
     </div>
   );
