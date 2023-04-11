@@ -11,6 +11,7 @@ import Subscription from "./Components/Subscription/Subscription";
 import Footer from "./Components/Footer/Footer";
 import { Mug, products } from "./data/Products";
 import { Post, posts } from "./data/Posts";
+import { people } from "./data/People";
 
 function App() {
   const [viewCart, setViewCart] = useState([]);
@@ -29,7 +30,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
       </Routes>
       <Routes>
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About authors={people} />} />
       </Routes>
       <Routes>
         <Route path="/contact" element={<Contact />} />

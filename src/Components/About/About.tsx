@@ -1,8 +1,14 @@
 import "./About.css";
 import Intro from "../Intro/Intro";
 import Introductions from "../Introductions/Introductions";
+import Authors from "../Authors/Authors";
+import { Person } from "../../data/People";
 
-const About = () => {
+type PropsType = {
+  authors: Person[];
+};
+
+const About = ({ authors }: PropsType) => {
   return (
     <div className="about">
       <Intro
@@ -12,6 +18,7 @@ const About = () => {
       <div className="about__container">
         <div className="about__image" />
         <Introductions />
+        <Authors authors={authors} />
       </div>
     </div>
   );
