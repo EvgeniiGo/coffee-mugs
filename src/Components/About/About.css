@@ -1,0 +1,30 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about__container {
+  margin-top: -110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 940px;
+}
+
+.about__image {
+  height: 320px;
+  width: 100%;
+  background-position: 50% 50%;
+  margin-bottom: 100px;
+  background-image: url("../../images/About/about-intro.jpg");
+  background-size: cover;
+}
+
+@media screen and (min-width: 992px) {
+  .about {
+    padding: 0 30px;
+  }
+}

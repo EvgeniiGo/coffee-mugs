@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
 import "./Intro.css";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
-const Intro = () => {
+type PropsType = {
+  title: string;
+  subtitle: string;
+  label?: string;
+};
+
+const Intro = ({ title, subtitle, label = undefined }: PropsType) => {
   return (
     <section className="intro">
-      <p className="intro__label">Best place to buy design</p>
-      <h1 className="intro__title">Coffee Mugs</h1>
-      <p className="intro__subtitle">
-        The most versatile furniture system ever created. Designed to fit your
-        life, made to move and grow.
-      </p>
-      <Link to="/products" className="intro__link">
-        Explore our products
-      </Link>
+      <h2 className="intro__title">{title}</h2>
+      <p className="intro__subtitle">{subtitle}</p>
+      {label !== undefined ? <SectionTitle text={label} /> : ""}
     </section>
   );
 };

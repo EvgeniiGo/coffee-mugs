@@ -1,4 +1,4 @@
-import Intro from "../Intro/Intro";
+import MainIntro from "../MainIntro/MainIntro";
 import Story from "../Story/Story";
 import "./Main.css";
 import FeaturedMugs from "../FeaturedMugs/FeaturedMugs";
@@ -16,7 +16,7 @@ type PropsType = {
 const Main = ({ mugs, posts }: PropsType) => {
   return (
     <>
-      <Intro />
+      <MainIntro />
       <div className="main__container">
         <Story />
         <FeaturedMugs

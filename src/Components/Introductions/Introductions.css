@@ -1,0 +1,121 @@
+.introductions {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introductions__intro {
+  margin-bottom: 100px;
+}
+
+.introductions__intro > .section-title {
+  margin-bottom: 20px;
+}
+
+.introduictions__title {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 400;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.introductions__subtitle {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  text-align: center;
+  color: rgba(29, 31, 46, 0.7);
+  margin-bottom: 15px;
+}
+
+.introductions__post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+  gap: 16px;
+}
+
+.introductions__post-image {
+  height: 320px;
+  width: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+#img1 {
+  background-image: url("../../images/About/about1.jpg");
+}
+
+#img2 {
+  background-image: url("../../images/About/about2.jpg");
+}
+
+.introductions__post-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introductions__post-title {
+  margin: 10px 0 15px;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.introductions__line {
+  width: 30px;
+  height: 1px;
+  background-color: #ececed;
+  margin-bottom: 15px;
+}
+
+.introductions__post-subtitle {
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(29, 31, 46, 0.7);
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .introductions__intro {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .introductions__intro {
+    width: 60%;
+  }
+  .introductions__post {
+    flex-direction: row;
+    gap: 80px;
+    margin-bottom: 130px;
+  }
+
+  .introductions__post:nth-of-type(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .introductions__post-image {
+    min-height: 380px;
+    height: 100%;
+    width: calc(50% - 10px);
+  }
+
+  .introductions__post-text {
+    align-items: flex-start;
+    width: calc(50% - 70px);
+  }
+
+  .introductions__post-title,
+  .introductions__post-subtitle {
+    text-align: left;
+  }
+}
