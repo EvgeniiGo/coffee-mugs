@@ -1,0 +1,91 @@
+.offices {
+  width: 100%;
+  padding: 0 4%;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.office {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 60px;
+}
+
+.office__image {
+  margin-bottom: 40px;
+  height: 190px;
+  width: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.office__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.office__country-label {
+  letter-spacing: 2px;
+  opacity: 0.6;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.office__city-title {
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.office__adress {
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(29, 31, 46, 0.7);
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.office__opening-label {
+  letter-spacing: 2px;
+  opacity: 0.6;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.office__opening-times {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.office__opening-time {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(29, 31, 46, 0.7);
+}
+
+@media screen and (min-width: 768px) {
+  .offices {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .offices {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .office {
+    margin-bottom: 50px;
+  }
+}
