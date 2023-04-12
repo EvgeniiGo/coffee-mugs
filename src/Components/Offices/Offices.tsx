@@ -13,11 +13,11 @@ const Offices = () => {
   return (
     <section className="offices">
       <div className="office">
-        <img src={imgLondon} alt="office" className="office__image" />
+        <img src={imgLondon} alt="London" className="office__image" />
         <div className="office__info">
           <p className="office__country-label">United Kingdom</p>
           <h3 className="office__city-title">Canary Wharf, London</h3>
-          <p className="office__adress">
+          <p className="office__address">
             Jubilee Place London
             <br />
             E14
@@ -32,11 +32,11 @@ const Offices = () => {
         </div>
       </div>
       <div className="office">
-        <img src={imgCalifornia} alt="office" className="office__image" />
+        <img src={imgCalifornia} alt="California" className="office__image" />
         <div className="office__info">
           <p className="office__country-label">United States</p>
           <h3 className="office__city-title">Venice Beach, California</h3>
-          <p className="office__adress">
+          <p className="office__address">
             9219 Old Kingston Street South
             <br /> El Monte, CA
             <br /> 91733
