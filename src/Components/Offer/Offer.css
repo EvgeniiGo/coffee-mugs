@@ -84,6 +84,7 @@
 @media screen and (min-width: 768px) {
   .offer__images {
     justify-content: center;
+    flex-direction: row;
   }
   .offer__big-image {
     width: 280px;
@@ -111,7 +112,6 @@
   }
 
   .offer__images {
-    flex-direction: row;
     margin-bottom: 0;
   }
 

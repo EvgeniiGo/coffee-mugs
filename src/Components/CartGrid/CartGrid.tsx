@@ -9,10 +9,11 @@ type PropsType = {
 
 const CartGrid = ({ mugs }: PropsType) => {
   return (
-    <section className="cart-grid">
+    <div className="cart-grid">
       {mugs.map((mug) => {
         return (
           <ProductCard
+            key={mug.id}
             id={mug.id}
             name={mug.name}
             price={mug.price}
@@ -20,7 +21,7 @@ const CartGrid = ({ mugs }: PropsType) => {
           />
         );
       })}
-    </section>
+    </div>
   );
 };
 

@@ -9,8 +9,8 @@ import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import Subscription from "./Components/Subscription/Subscription";
 import Footer from "./Components/Footer/Footer";
-import { Mug, products } from "./data/Products";
-import { Post, posts } from "./data/Posts";
+import { products } from "./data/Products";
+import { posts } from "./data/Posts";
 import { people } from "./data/People";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Route path="/" element={<Main mugs={products} posts={posts} />} />
       </Routes>
       <Routes>
-        <Route path="/products" element={<Products />} />
+        <Route path="/products" element={<Products mugs={products} />} />
       </Routes>
       <Routes>
         <Route path="/blog" element={<Blog />} />
