@@ -1,0 +1,62 @@
+.directory {
+  padding: 0 4%;
+  margin-bottom: 100px;
+}
+
+.directors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.director {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.director__label {
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.director__name {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.director__contacts {
+  margin-bottom: 30px;
+  text-align: center;
+  color: rgba(29, 31, 46, 0.7);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+@media screen and (min-width: 768px) {
+  .directory {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .directory {
+    width: 940px;
+    padding: 0;
+  }
+
+  .directors {
+    flex-direction: row;
+  }
+
+  .director {
+    width: 300px;
+  }
+}

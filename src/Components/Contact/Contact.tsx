@@ -2,6 +2,7 @@ import "./Contact.css";
 import Intro from "../Intro/Intro";
 import Offices from "../Offices/Offices";
 import ContactForm from "../ContactForm/ContactForm";
+import Directory from "../Directory/Directory";
 
 const Contact = () => {
   return (
@@ -21,6 +22,7 @@ const Contact = () => {
             loading="lazy"
           ></iframe>
         </section>
+        <Directory />
       </div>
     </>
   );
