@@ -6,6 +6,7 @@
   align-items: center;
   box-sizing: border-box;
   margin: 0 4%;
+  background-color: white;
 }
 
 .form-section__form-column {
@@ -173,6 +174,7 @@
   .form-section {
     flex-direction: row;
     align-items: flex-start;
+    justify-content: center;
   }
   .form-section__form-column {
     padding-bottom: 0px;
