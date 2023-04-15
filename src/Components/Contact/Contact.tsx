@@ -10,7 +10,7 @@ const Contact = () => {
       <Intro
         title="Let's Connect"
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis."
-        label="OUR OFFICES"
+        label="Our offices"
       />
       <div className="contact__container">
         <Offices />

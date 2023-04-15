@@ -1,0 +1,37 @@
+.blog__container {
+  margin-top: -110px;
+  max-width: 940px;
+  padding: 0 4%;
+}
+
+.featured-posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.featured-posts > .post-card {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .blog__container {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .blog__container {
+    padding: 0;
+    width: 100%;
+  }
+
+  .featured-posts {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+}

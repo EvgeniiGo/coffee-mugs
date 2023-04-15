@@ -52,7 +52,7 @@ export const posts = [
       month: "October",
       year: 2022,
     },
-    categories: ["coffee"],
+    categories: ["coffee", "featured"],
     author: "Maurice Herman",
   },
 
@@ -81,7 +81,7 @@ export const posts = [
       month: "October",
       year: 2022,
     },
-    categories: ["coffee"],
+    categories: ["coffee", "featured"],
     author: "Isabel Hamill",
   },
 ];
