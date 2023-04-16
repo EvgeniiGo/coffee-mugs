@@ -4,7 +4,7 @@ import { Post } from "../../data/Posts";
 type PropsType = Omit<Post, "categories" | "author">;
 
 const PostCart = ({ id, title, subtitle, date }: PropsType) => {
-  const dateString: string = date.month + " " + date.day + "," + date.year;
+  const dateString: string = date.month + " " + date.day + ", " + date.year;
 
   const img: string = new URL(`../../images/posts/${id}.jpg`, import.meta.url)
     .href;

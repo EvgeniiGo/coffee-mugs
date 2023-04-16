@@ -2,6 +2,7 @@ import Intro from "../Intro/Intro";
 import { Post } from "../../data/Posts";
 import PostCart from "../PostCart/PostCart";
 import "./Blog.css";
+import BlogColumns from "../BlogColumns/BlogColumns";
 
 type PropsType = {
   posts: Post[];
@@ -31,6 +32,7 @@ Featured posts"
               );
             })}
         </section>
+        <BlogColumns posts={posts} />
       </div>
     </>
   );
