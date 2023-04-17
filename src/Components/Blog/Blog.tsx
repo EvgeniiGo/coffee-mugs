@@ -33,6 +33,14 @@ Featured posts"
             })}
         </section>
         <BlogColumns posts={posts} />
+        <section className="quote">
+          <p className="quote__text">
+            "I wake up some mornings and sit and have my coffee and look out at
+            my beautiful garden, and I go, ’Remember how good this is. Because
+            you can lose it."
+          </p>
+          <p className="quote__label">Jason Johnson - Owner of Coffeestyle</p>
+        </section>
       </div>
     </>
   );
