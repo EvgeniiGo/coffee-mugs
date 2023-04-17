@@ -81,7 +81,7 @@
   width: 100%;
 }
 
-.blog__link {
+.blog__filter {
   box-sizing: border-box;
   padding: 8px 0 8px 20px;
   margin-bottom: 10px;
@@ -90,17 +90,25 @@
   font-size: 16px;
   line-height: 28px;
   text-transform: capitalize;
+  border: none;
   border-left: 2px solid rgba(162, 95, 75, 0.2);
   display: flex;
   align-items: center;
   width: 100%;
   transition: color 0.4s ease, border 0.4s ease, background-color 0.4s ease;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.blog__link:hover {
+.blog__filter:hover {
   border-left-color: #a25f4b;
   background-color: rgba(162, 95, 75, 0.04);
   color: #1d1f2e;
+}
+
+.blog__filter_active {
+  color: rgba(29, 31, 46, 0.85);
+  border-left-color: rgba(162, 95, 75, 0.4);
 }
 
 .blog__author-image {

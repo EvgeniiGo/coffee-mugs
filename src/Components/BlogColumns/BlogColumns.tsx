@@ -2,22 +2,75 @@ import "./BlogColumns.css";
 import { Post } from "../../data/Posts";
 import PostCart from "../PostCart/PostCart";
 import { people } from "../../data/People";
+import { SyntheticEvent, useEffect, useState } from "react";
 
 type PropsType = {
   posts: Post[];
 };
 
 const BlogColumns = ({ posts }: PropsType) => {
+  const [postsToShow, setPostsToShow] = useState<Post[]>([]);
+  const [categoryFilter, setCategoryFilter] = useState<string>("");
+  const [authorFilter, setAuthorFilter] = useState<string>("");
+
+  useEffect(() => {
+    if (categoryFilter === "" && authorFilter === "") {
+      setPostsToShow(posts);
+    }
+
+    if (categoryFilter !== "") {
+      setPostsToShow(
+        posts.filter((post) => post.categories.includes(categoryFilter))
+      );
+    }
+
+    if (authorFilter !== "") {
+      setPostsToShow(posts.filter((post) => post.author === authorFilter));
+    }
+  }, [categoryFilter, authorFilter]);
+
   const img: string = new URL(`../../images/logo.png`, import.meta.url).href;
+
+  const updateActiveFilter = (el: HTMLButtonElement): void => {
+    document
+      .querySelector(".blog__filter_active")
+      ?.classList.remove("blog__filter_active");
+    el.classList.add("blog__filter_active");
+  };
+
+  const filterByCategory = (category: string): void => {
+    setCategoryFilter(category);
+    setAuthorFilter("");
+  };
+
+  const handleCategoryClick = (e: SyntheticEvent<HTMLButtonElement>): void => {
+    const target = e.target as HTMLButtonElement;
+    updateActiveFilter(target);
+    const filter = target.textContent as string;
+    filterByCategory(filter.toLowerCase());
+  };
+
+  const filterByAuthor = (author: string): void => {
+    setCategoryFilter("");
+    setAuthorFilter(author);
+  };
+
+  const handleAuthorClick = (e: SyntheticEvent<HTMLButtonElement>): void => {
+    const target = e.target as HTMLButtonElement;
+    updateActiveFilter(target);
+    const filter = target.textContent as string;
+    filterByAuthor(filter);
+  };
 
   return (
     <section className="blog__columns-container">
       <div className="blog__left-column">
         <h3 className="blog__column-title">Latest Posts</h3>
         <div className="blog__posts">
-          {posts.map((post) => {
+          {postsToShow.map((post) => {
             return (
               <PostCart
+                key={post.id}
                 id={post.id}
                 title={post.title}
                 subtitle={post.subtitle}
@@ -42,18 +95,34 @@ const BlogColumns = ({ posts }: PropsType) => {
         <h3 className="blog__title">Categories</h3>
         <div className="blog__content">
           <div className="blog__links">
-            <a href="" className="blog__link">
+            <button
+              className="blog__filter"
+              onClick={handleCategoryClick}
+              type="button"
+            >
               Barista
-            </a>
-            <a href="" className="blog__link">
+            </button>
+            <button
+              className="blog__filter"
+              onClick={handleCategoryClick}
+              type="button"
+            >
               Coffee
-            </a>
-            <a href="" className="blog__link">
+            </button>
+            <button
+              className="blog__filter"
+              onClick={handleCategoryClick}
+              type="button"
+            >
               Lifestyle
-            </a>
-            <a href="" className="blog__link">
+            </button>
+            <button
+              className="blog__filter"
+              onClick={handleCategoryClick}
+              type="button"
+            >
               Mugs
-            </a>
+            </button>
           </div>
         </div>
         <h3 className="blog__title">Authors</h3>
@@ -66,14 +135,18 @@ const BlogColumns = ({ posts }: PropsType) => {
               ).href;
 
               return (
-                <a href="" className="blog__link">
+                <button
+                  className="blog__filter"
+                  onClick={handleAuthorClick}
+                  type="button"
+                >
                   <img
                     src={img}
                     alt={author.name}
                     className="blog__author-image"
                   />
                   {author.name}
-                </a>
+                </button>
               );
             })}
           </div>
