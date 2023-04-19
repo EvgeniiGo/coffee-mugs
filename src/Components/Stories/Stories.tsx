@@ -15,6 +15,7 @@ const Stories = ({ posts }: PropsType) => {
         {posts.map((post) => {
           return (
             <PostCart
+              key={post.id}
               id={post.id}
               title={post.title}
               subtitle={post.subtitle}

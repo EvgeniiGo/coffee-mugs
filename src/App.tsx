@@ -9,6 +9,7 @@ import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import Subscription from "./Components/Subscription/Subscription";
 import Footer from "./Components/Footer/Footer";
+import BlogPost from "./Components/BlogPost/BlogPost";
 import { products } from "./data/Products";
 import { posts } from "./data/Posts";
 import { people } from "./data/People";
@@ -34,6 +35,12 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Routes>
+        <Route
+          path="/posts/:id"
+          element={<BlogPost posts={posts} people={people} />}
+        />
       </Routes>
       <Subscription />
       <Footer />

@@ -1,7 +1,7 @@
 import "./PostCart.css";
 import { Post } from "../../data/Posts";
 
-type PropsType = Omit<Post, "categories" | "author">;
+type PropsType = Omit<Post, "categories" | "author" | "body">;
 
 const PostCart = ({ id, title, subtitle, date }: PropsType) => {
   const dateString: string = date.month + " " + date.day + ", " + date.year;

@@ -15,6 +15,7 @@ const FeaturedMugs = ({ mugs }: PropsType) => {
         {mugs.map((mug) => {
           return (
             <ProductCard
+              key={mug.id}
               id={mug.id}
               name={mug.name}
               price={mug.price}
