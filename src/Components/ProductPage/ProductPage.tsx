@@ -1,4 +1,5 @@
 import "./ProductPage.css";
+import Premium from "../Premium/Premium";
 import { Mug } from "../../data/Products";
 import { useParams } from "react-router-dom";
 import { usd } from "../../utils/functions";
@@ -107,6 +108,7 @@ const ProductPage = ({ mugs }: PropsType) => {
           </div>
         </div>
       </section>
+      <Premium />
     </div>
   );
 };
