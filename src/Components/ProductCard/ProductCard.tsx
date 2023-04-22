@@ -2,7 +2,10 @@ import "./ProductCard.css";
 import { Mug } from "../../data/Products";
 import { usd } from "../../utils/functions";
 
-type PropsType = Omit<Mug, "categories">;
+type PropsType = Omit<
+  Mug,
+  "categories" | "description" | "dimensions" | "details"
+>;
 
 const ProductCard = ({ id, name, price, oldPrice = undefined }: PropsType) => {
   const img: string = new URL(

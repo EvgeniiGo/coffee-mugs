@@ -10,6 +10,7 @@ import Contact from "./Components/Contact/Contact";
 import Subscription from "./Components/Subscription/Subscription";
 import Footer from "./Components/Footer/Footer";
 import BlogPost from "./Components/BlogPost/BlogPost";
+import ProductPage from "./Components/ProductPage/ProductPage";
 import { products } from "./data/Products";
 import { posts } from "./data/Posts";
 import { people } from "./data/People";
@@ -41,6 +42,9 @@ function App() {
           path="/posts/:id"
           element={<BlogPost posts={posts} people={people} />}
         />
+      </Routes>
+      <Routes>
+        <Route path="/product/:id" element={<ProductPage mugs={products} />} />
       </Routes>
       <Subscription />
       <Footer />
