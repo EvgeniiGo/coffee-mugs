@@ -1,8 +1,10 @@
 import "./ProductPage.css";
 import Premium from "../Premium/Premium";
+import SectionTitle from "../SectionTitle/SectionTitle";
 import { Mug } from "../../data/Products";
 import { useParams } from "react-router-dom";
 import { usd } from "../../utils/functions";
+import ProductCard from "../ProductCard/ProductCard";
 
 type PropsType = {
   mugs: Mug[];
@@ -15,6 +17,8 @@ const ProductPage = ({ mugs }: PropsType) => {
     `../../images/products/${mug.id}.jpg`,
     import.meta.url
   ).href;
+
+  const additionalMugs: Mug[] = mugs.filter((mug) => mug.id !== id).slice(0, 3);
 
   return (
     <div className="product-page">
@@ -109,6 +113,19 @@ const ProductPage = ({ mugs }: PropsType) => {
         </div>
       </section>
       <Premium />
+      <section className="more-products">
+        <SectionTitle text="You might also like these" />
+        <div className="more-products__container">
+          {additionalMugs.map((mug) => (
+            <ProductCard
+              id={mug.id}
+              name={mug.name}
+              price={mug.price}
+              oldPrice={mug.oldPrice}
+            />
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
