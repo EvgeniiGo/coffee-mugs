@@ -130,9 +130,10 @@
   margin: 0 30px 140px;
   box-sizing: border-box;
   border: 1px solid #ececed;
+  background-color: #fff;
 }
 
-blog-post__author-content {
+.blog-post__author-content {
   display: flex;
   flex-direction: column;
   align-items: center;

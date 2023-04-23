@@ -1,6 +1,6 @@
 import "./BlogColumns.css";
 import { Post } from "../../data/Posts";
-import PostCart from "../PostCart/PostCart";
+import PostCart from "../PostCart/PostCard";
 import { people } from "../../data/People";
 import { SyntheticEvent, useEffect, useState } from "react";
 
@@ -88,7 +88,7 @@ const BlogColumns = ({ posts }: PropsType) => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             varius enim in eros elementum tristique.
           </p>
-          <a href="" className="blog__story-link">
+          <a href="/about" className="blog__story-link">
             Read the full Story
           </a>
         </div>

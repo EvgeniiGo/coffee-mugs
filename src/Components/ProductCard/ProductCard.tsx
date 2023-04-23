@@ -1,6 +1,7 @@
 import "./ProductCard.css";
 import { Mug } from "../../data/Products";
 import { usd } from "../../utils/functions";
+import { useNavigate } from "react-router-dom";
 
 type PropsType = Omit<
   Mug,
@@ -13,13 +14,23 @@ const ProductCard = ({ id, name, price, oldPrice = undefined }: PropsType) => {
     import.meta.url
   ).href;
 
+  const navigate = useNavigate();
+  const handleNavigation = (): void => {
+    navigate(`/product/${id}`);
+  };
+
   return (
     <div className="product-card">
       <div className="product-card__image-container">
-        <img src={img} alt={name} className="product-card__image" />
-        <button className="product-card__button" type="button">
+        <img
+          src={img}
+          alt={name}
+          className="product-card__image"
+          onClick={handleNavigation}
+        />
+        <a href={`/product/${id}`} className="product-card__link">
           Explore mug
-        </button>
+        </a>
         {oldPrice !== undefined ? (
           <div className="product-card__on-sale">On Sale.</div>
         ) : (
@@ -27,7 +38,9 @@ const ProductCard = ({ id, name, price, oldPrice = undefined }: PropsType) => {
         )}
       </div>
 
-      <h4 className="product-card__name">{name}</h4>
+      <h4 className="product-card__name" onClick={handleNavigation}>
+        {name}
+      </h4>
       <div className="product-card__price-container">
         {oldPrice === undefined ? (
           <p className="product-card__price">{usd(price)}</p>

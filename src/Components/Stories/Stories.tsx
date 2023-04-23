@@ -1,6 +1,6 @@
 import "./Stories.css";
 import { Post } from "../../data/Posts";
-import PostCart from "../PostCart/PostCart";
+import PostCart from "../PostCart/PostCard";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 type PropsType = {

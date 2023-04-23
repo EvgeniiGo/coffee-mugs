@@ -10,3 +10,28 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.featured__cards .product-card__image {
+  height: 380px;
+}
+
+@media screen and (min-width: 768px) {
+  .featured__cards .product-card__image {
+    height: 540px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .featured__cards {
+    gap: 20px;
+  }
+
+  .featured__cards > .product-card {
+    width: calc(50% - 10px);
+    padding: 0;
+  }
+
+  .featured__cards .product-card__image {
+    width: 460px;
+  }
+}

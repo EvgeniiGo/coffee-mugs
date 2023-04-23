@@ -1,6 +1,6 @@
 import Intro from "../Intro/Intro";
 import { Post } from "../../data/Posts";
-import PostCart from "../PostCart/PostCart";
+import PostCart from "../PostCart/PostCard";
 import "./Blog.css";
 import BlogColumns from "../BlogColumns/BlogColumns";
 
