@@ -5,12 +5,15 @@ import { Mug } from "../../data/Products";
 import { useParams } from "react-router-dom";
 import { usd } from "../../utils/functions";
 import ProductCard from "../ProductCard/ProductCard";
+import { CartFunctionType } from "../../App";
+import { ChangeEvent, SyntheticEvent, useState } from "react";
 
 type PropsType = {
   mugs: Mug[];
+  onAdd: CartFunctionType;
 };
 
-const ProductPage = ({ mugs }: PropsType) => {
+const ProductPage = ({ mugs, onAdd }: PropsType) => {
   const { id } = useParams();
   const mug = mugs.find((mug) => mug.id === id) as Mug;
   const img: string = new URL(
@@ -19,6 +22,16 @@ const ProductPage = ({ mugs }: PropsType) => {
   ).href;
 
   const additionalMugs: Mug[] = mugs.filter((mug) => mug.id !== id).slice(0, 3);
+
+  const [quantity, setQuantity] = useState<number>(1);
+  const handleQuantityChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuantity(Number(e.target.value));
+  };
+
+  const handleButtonClick = (e: SyntheticEvent) => {
+    e.preventDefault();
+    onAdd(mug.id, quantity);
+  };
 
   return (
     <div className="product-page">
@@ -61,10 +74,16 @@ const ProductPage = ({ mugs }: PropsType) => {
                 type="number"
                 min={1}
                 max={50}
-                defaultValue={1}
+                value={quantity || 1}
+                onChange={handleQuantityChange}
                 className="product-form__input"
               />
-              <button className="product-form__button">Add to cart</button>
+              <button
+                className="product-form__button"
+                onClick={handleButtonClick}
+              >
+                Add to cart
+              </button>
             </form>
           </div>
         </div>
@@ -118,6 +137,7 @@ const ProductPage = ({ mugs }: PropsType) => {
         <div className="more-products__container">
           {additionalMugs.map((mug) => (
             <ProductCard
+              key={mug.id}
               id={mug.id}
               name={mug.name}
               price={mug.price}
