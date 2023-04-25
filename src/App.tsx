@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
@@ -23,7 +23,7 @@ export type CartType = {
 export type CartFunctionType = (productId: string, quantity: number) => void;
 
 function App() {
-  const [viewCart, setViewCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [productsInCart, setProductsInCart] = useState<CartType>({});
 
   function addProductToCart(productId: string, quantity: number): void {
@@ -36,6 +36,7 @@ function App() {
       newCart[productId] = quantity;
     }
     setProductsInCart(newCart);
+    setIsCartOpen(true);
   }
 
   const changeProductInCartQuantity: CartFunctionType = (
@@ -49,12 +50,32 @@ function App() {
       newCart[productId] = newQuantity;
     }
     setProductsInCart(newCart);
+    openCart();
   };
+
+  function handleOverlayClose(e: MouseEvent) {
+    const cartElement = document.querySelector(".cart") as HTMLElement;
+    if (e.target === cartElement) {
+      closeCart();
+    }
+  }
+
+  function openCart(): void {
+    const cartElement = document.querySelector(".cart") as HTMLElement;
+    cartElement.classList.add("cart_opened");
+    document.addEventListener("click", handleOverlayClose);
+  }
+
+  function closeCart(): void {
+    const cartElement = document.querySelector(".cart") as HTMLElement;
+    console.log(cartElement);
+    cartElement.classList.remove("cart_opened");
+    document.removeEventListener("click", handleOverlayClose);
+  }
 
   return (
     <>
-      {/* <Header viewCart={viewCart} setViewCart={setViewCart} /> */}
-      <Header />
+      <Header openCart={openCart} productsInCart={productsInCart} />
       <Routes>
         <Route path="/" element={<Main mugs={products} posts={posts} />} />
       </Routes>
@@ -88,6 +109,7 @@ function App() {
         products={products}
         productsInCart={productsInCart}
         onChange={changeProductInCartQuantity}
+        onClose={closeCart}
       />
     </>
   );
