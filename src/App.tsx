@@ -27,34 +27,28 @@ function App() {
   const [productsInCart, setProductsInCart] = useState<CartType>({});
 
   function addProductToCart(productId: string, quantity: number): void {
-    console.log(productId);
     const newCart: CartType = { ...productsInCart };
     if (newCart[productId]) {
+      console.log(newCart[productId]);
       newCart[productId] = newCart[productId] + quantity;
+      console.log(newCart[productId]);
     } else {
       newCart[productId] = quantity;
     }
     setProductsInCart(newCart);
-    // Object.keys(productsInCart).includes(productId)
-    //   ? setProductsInCart({
-    //       ...productsInCart,
-    //       productId: productsInCart[productId] + quantity,
-    //     })
-    //   : setProductsInCart({ ...productsInCart, productId: quantity});
-    // console.log(productsInCart);
   }
 
   const changeProductInCartQuantity: CartFunctionType = (
     productId,
     newQuantity
   ) => {
+    const newCart: CartType = { ...productsInCart };
     if (newQuantity === 0) {
-      const newCart: CartType = { ...productsInCart };
       delete newCart[productId];
-      setProductsInCart(newCart);
     } else {
-      setProductsInCart({ ...productsInCart, productId: newQuantity });
+      newCart[productId] = newQuantity;
     }
+    setProductsInCart(newCart);
   };
 
   return (

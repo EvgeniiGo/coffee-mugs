@@ -1,6 +1,8 @@
 import "./Cart.css";
 import { Mug } from "../../data/Products";
 import { CartType, CartFunctionType } from "../../App";
+import { usd } from "../../utils/functions";
+import { ChangeEvent } from "react";
 
 type PropsType = {
   products: Mug[];
@@ -12,10 +14,12 @@ const Cart = ({ products, productsInCart, onChange }: PropsType) => {
   const subtotal: number =
     Object.keys(productsInCart).length > 0
       ? Object.keys(productsInCart).reduce((total, key) => {
-          return total + productsInCart[key];
+          const price: number = products.filter(
+            (product) => product.id === key
+          )[0].price;
+          return total + productsInCart[key] * price;
         }, 0)
       : 0;
-  const subtotalString: string = "$ " + subtotal + ".00 USD";
 
   return (
     <div className="cart">
@@ -36,8 +40,14 @@ const Cart = ({ products, productsInCart, onChange }: PropsType) => {
               onChange(product.id, 0);
             }
 
+            function updateQuantity(e: ChangeEvent<HTMLInputElement>) {
+              if (e.target.value !== "")
+                onChange(product.id, Number(e.target.value));
+              console.log(productsInCart);
+            }
+
             return (
-              <div className="cart__product-cart">
+              <div className="cart__product-cart" key={product.id}>
                 <img
                   src={img}
                   alt={product.name}
@@ -45,7 +55,7 @@ const Cart = ({ products, productsInCart, onChange }: PropsType) => {
                 />
                 <div className="cart__product-text">
                   <h5 className="cart__product-name">{product.name}</h5>
-                  <p className="cart__product-price">{product.price}</p>
+                  <p className="cart__product-price">{usd(product.price)}</p>
                   <button
                     className="cart__product-button"
                     onClick={handleRemove}
@@ -58,6 +68,7 @@ const Cart = ({ products, productsInCart, onChange }: PropsType) => {
                   min={1}
                   max={50}
                   value={productsInCart[product.id]}
+                  onChange={updateQuantity}
                   className="cart__product-input"
                 />
               </div>
@@ -67,7 +78,7 @@ const Cart = ({ products, productsInCart, onChange }: PropsType) => {
       <div className="cart__footer">
         <div className="cart__cost">
           <p className="cart__subtotal">Subtotal</p>
-          <p className="cart__value">{subtotalString}</p>
+          <p className="cart__value">{usd(subtotal)}</p>
         </div>
         <button className="cart__checkout-button" type="button">
           Continue to checkout
