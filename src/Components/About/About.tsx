@@ -4,12 +4,17 @@ import Introductions from "../Introductions/Introductions";
 import Authors from "../Authors/Authors";
 import History from "../History/History";
 import { Person } from "../../data/People";
+import { useEffect } from "react";
 
 type PropsType = {
   authors: Person[];
 };
 
 const About = ({ authors }: PropsType) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="about">
       <Intro

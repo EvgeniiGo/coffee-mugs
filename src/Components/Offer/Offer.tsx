@@ -32,7 +32,7 @@ const Offer = () => {
             The most versatile furniture system ever created. Designed to fit
             your life.
           </p>
-          <Link className="offer__link" to="/products">
+          <Link className="offer__link" to="/coffee-mugs/products">
             Start shopping
           </Link>
         </div>

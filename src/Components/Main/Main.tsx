@@ -7,6 +7,7 @@ import Offer from "../Offer/Offer";
 import Stories from "../Stories/Stories";
 import { Mug } from "../../data/Products";
 import { Post } from "../../data/Posts";
+import { useEffect } from "react";
 
 type PropsType = {
   mugs: Mug[];
@@ -14,6 +15,10 @@ type PropsType = {
 };
 
 const Main = ({ mugs, posts }: PropsType) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <MainIntro />

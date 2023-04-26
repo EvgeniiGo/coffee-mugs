@@ -41,7 +41,7 @@ const Header = ({ openCart, productsInCart }: PropsType) => {
           className={({ isActive }) =>
             isActive ? "nav__link nav__link_active" : "nav__link"
           }
-          to="/"
+          to="/coffee-mugs/"
         >
           Home
         </NavLink>
@@ -49,7 +49,7 @@ const Header = ({ openCart, productsInCart }: PropsType) => {
           className={({ isActive }) =>
             isActive ? "nav__link nav__link_active" : "nav__link"
           }
-          to="/products"
+          to="/coffee-mugs/products"
         >
           Our products
         </NavLink>
@@ -57,7 +57,7 @@ const Header = ({ openCart, productsInCart }: PropsType) => {
           className={({ isActive }) =>
             isActive ? "nav__link nav__link_active" : "nav__link"
           }
-          to="/blog"
+          to="/coffee-mugs/blog"
         >
           Blog
         </NavLink>
@@ -65,7 +65,7 @@ const Header = ({ openCart, productsInCart }: PropsType) => {
           className={({ isActive }) =>
             isActive ? "nav__link nav__link_active" : "nav__link"
           }
-          to="/about"
+          to="/coffee-mugs/about"
         >
           About
         </NavLink>
@@ -73,7 +73,7 @@ const Header = ({ openCart, productsInCart }: PropsType) => {
           className={({ isActive }) =>
             isActive ? "nav__link nav__link_active" : "nav__link"
           }
-          to="/contact"
+          to="/coffee-mugs/contact"
         >
           Contact
         </NavLink>

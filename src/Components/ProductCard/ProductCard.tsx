@@ -16,7 +16,7 @@ const ProductCard = ({ id, name, price, oldPrice = undefined }: PropsType) => {
 
   const navigate = useNavigate();
   const handleNavigation = (): void => {
-    navigate(`/product/${id}`);
+    navigate(`/coffee-mugs/product/${id}`);
   };
 
   return (
@@ -28,7 +28,7 @@ const ProductCard = ({ id, name, price, oldPrice = undefined }: PropsType) => {
           className="product-card__image"
           onClick={handleNavigation}
         />
-        <a href={`/product/${id}`} className="product-card__link">
+        <a href={`/coffee-mugs/product/${id}`} className="product-card__link">
           Explore mug
         </a>
         {oldPrice !== undefined ? (

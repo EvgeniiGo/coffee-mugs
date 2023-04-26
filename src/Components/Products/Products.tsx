@@ -1,13 +1,7 @@
 import "./Products.css";
 import CartGrid from "../CartGrid/CartGrid";
 import { Mug } from "../../data/Products";
-import {
-  MouseEvent,
-  ReactEventHandler,
-  SyntheticEvent,
-  useEffect,
-  useState,
-} from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 
 type PropsType = {
   mugs: Mug[];
@@ -50,6 +44,10 @@ const Products = ({ mugs }: PropsType) => {
       setMugsToShow(filterMugs(activeFilter));
     }
   }, [activeFilter]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section className="products">

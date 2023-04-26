@@ -12,7 +12,7 @@ const PostCart = ({ id, title, subtitle, date }: PropsType) => {
 
   const navigate = useNavigate();
   const handleNavigation = (): void => {
-    navigate(`/posts/${id}`);
+    navigate(`/coffee-mugs/posts/${id}`);
   };
 
   return (
@@ -24,7 +24,7 @@ const PostCart = ({ id, title, subtitle, date }: PropsType) => {
           className="post-card__image"
           onClick={handleNavigation}
         />
-        <a href={`posts/${id}`} className="post-card__link">
+        <a href={`/coffee-mugs/posts/${id}`} className="post-card__link">
           Read the full story
         </a>
       </div>

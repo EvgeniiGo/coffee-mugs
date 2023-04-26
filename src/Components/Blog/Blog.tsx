@@ -3,12 +3,17 @@ import { Post } from "../../data/Posts";
 import PostCart from "../PostCart/PostCard";
 import "./Blog.css";
 import BlogColumns from "../BlogColumns/BlogColumns";
+import { useEffect } from "react";
 
 type PropsType = {
   posts: Post[];
 };
 
 const Blog = ({ posts }: PropsType) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Intro

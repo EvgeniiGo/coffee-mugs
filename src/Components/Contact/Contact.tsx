@@ -3,8 +3,13 @@ import Intro from "../Intro/Intro";
 import Offices from "../Offices/Offices";
 import ContactForm from "../ContactForm/ContactForm";
 import Directory from "../Directory/Directory";
+import { useEffect } from "react";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Intro
