@@ -79,29 +79,35 @@ function App() {
     <>
       <Header openCart={openCart} productsInCart={productsInCart} />
       <Routes>
-        <Route path="/" element={<Main mugs={products} posts={posts} />} />
-      </Routes>
-      <Routes>
-        <Route path="/products" element={<Products mugs={products} />} />
-      </Routes>
-      <Routes>
-        <Route path="/blog" element={<Blog posts={posts} />} />
-      </Routes>
-      <Routes>
-        <Route path="/about" element={<About authors={people} />} />
-      </Routes>
-      <Routes>
-        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/coffee-mugs/"
+          element={<Main mugs={products} posts={posts} />}
+        />
       </Routes>
       <Routes>
         <Route
-          path="/posts/:id"
+          path="/coffee-mugs/products"
+          element={<Products mugs={products} />}
+        />
+      </Routes>
+      <Routes>
+        <Route path="/coffee-mugs/blog" element={<Blog posts={posts} />} />
+      </Routes>
+      <Routes>
+        <Route path="/coffee-mugs/about" element={<About authors={people} />} />
+      </Routes>
+      <Routes>
+        <Route path="/coffee-mugs/contact" element={<Contact />} />
+      </Routes>
+      <Routes>
+        <Route
+          path="/coffee-mugs/posts/:id"
           element={<BlogPost posts={posts} people={people} />}
         />
       </Routes>
       <Routes>
         <Route
-          path="/product/:id"
+          path="/coffee-mugs/product/:id"
           element={<ProductPage mugs={products} onAdd={addProductToCart} />}
         />
       </Routes>
