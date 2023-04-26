@@ -51,6 +51,10 @@ const Products = ({ mugs }: PropsType) => {
     }
   }, [activeFilter]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <section className="products">
       <div className="products__heading">

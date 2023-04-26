@@ -23,20 +23,17 @@ export type CartType = {
 export type CartFunctionType = (productId: string, quantity: number) => void;
 
 function App() {
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [productsInCart, setProductsInCart] = useState<CartType>({});
 
   function addProductToCart(productId: string, quantity: number): void {
     const newCart: CartType = { ...productsInCart };
     if (newCart[productId]) {
-      console.log(newCart[productId]);
       newCart[productId] = newCart[productId] + quantity;
-      console.log(newCart[productId]);
     } else {
       newCart[productId] = quantity;
     }
     setProductsInCart(newCart);
-    setIsCartOpen(true);
+    openCart();
   }
 
   const changeProductInCartQuantity: CartFunctionType = (
@@ -71,6 +68,11 @@ function App() {
     console.log(cartElement);
     cartElement.classList.remove("cart_opened");
     document.removeEventListener("click", handleOverlayClose);
+
+    const message = document.querySelector(
+      ".cart__checkout-message"
+    ) as HTMLParagraphElement;
+    message.classList.remove("cart__checkout-message_visible");
   }
 
   return (

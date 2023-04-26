@@ -139,6 +139,7 @@
   border: none;
   box-sizing: border-box;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .product-page__details-section {

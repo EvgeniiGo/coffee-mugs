@@ -22,6 +22,13 @@ const Cart = ({ products, productsInCart, onChange, onClose }: PropsType) => {
         }, 0)
       : 0;
 
+  const showCheckoutMessage = (): void => {
+    const message = document.querySelector(
+      ".cart__checkout-message"
+    ) as HTMLParagraphElement;
+    message.classList.add("cart__checkout-message_visible");
+  };
+
   return (
     <div className="cart">
       <div className="cart__container">
@@ -88,9 +95,16 @@ const Cart = ({ products, productsInCart, onChange, onClose }: PropsType) => {
             <p className="cart__subtotal">Subtotal</p>
             <p className="cart__value">{usd(subtotal)}</p>
           </div>
-          <button className="cart__checkout-button" type="button">
+          <button
+            className="cart__checkout-button"
+            type="button"
+            onClick={showCheckoutMessage}
+          >
             Continue to checkout
           </button>
+          <p className="cart__checkout-message">
+            Checkout is disabled on this site.
+          </p>
         </div>
       </div>
     </div>

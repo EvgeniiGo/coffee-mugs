@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { usd } from "../../utils/functions";
 import ProductCard from "../ProductCard/ProductCard";
 import { CartFunctionType } from "../../App";
-import { ChangeEvent, SyntheticEvent, useState } from "react";
+import { ChangeEvent, SyntheticEvent, useEffect, useState } from "react";
 
 type PropsType = {
   mugs: Mug[];
@@ -32,6 +32,10 @@ const ProductPage = ({ mugs, onAdd }: PropsType) => {
     e.preventDefault();
     onAdd(mug.id, quantity);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="product-page">

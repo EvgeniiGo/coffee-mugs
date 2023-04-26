@@ -2,6 +2,7 @@ import "./BlogPost.css";
 import { useParams } from "react-router-dom";
 import { Post } from "../../data/Posts";
 import { Person } from "../../data/People";
+import { useEffect } from "react";
 
 type PropsType = {
   posts: Post[];
@@ -24,6 +25,10 @@ const BlogPost = ({ posts, people }: PropsType) => {
 
   const dateString: string =
     post.date.month + " " + post.date.day + ", " + post.date.year;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="blog-post">
