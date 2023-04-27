@@ -16,19 +16,19 @@ const Footer = () => {
       <div className="footer__column">
         <h3 className="footer__column-title">Menu</h3>
         <nav className="footer__links">
-          <Link className="footer__link" to="/coffee-mugs/">
+          <Link className="footer__link" to="/">
             Home
           </Link>
-          <Link className="footer__link" to="/coffee-mugs/products">
+          <Link className="footer__link" to="/products">
             Our products
           </Link>
-          <Link className="footer__link" to="/coffee-mugs/blog">
+          <Link className="footer__link" to="/blog">
             Blog
           </Link>
-          <Link className="footer__link" to="/coffee-mugs/about">
+          <Link className="footer__link" to="/about">
             About
           </Link>
-          <Link className="footer__link" to="/coffee-mugs/contact">
+          <Link className="footer__link" to="/contact">
             Contact
           </Link>
         </nav>

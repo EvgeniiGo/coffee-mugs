@@ -88,7 +88,7 @@ const BlogColumns = ({ posts }: PropsType) => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             varius enim in eros elementum tristique.
           </p>
-          <a href="/coffee-mugs/about" className="blog__story-link">
+          <a href="/about" className="blog__story-link">
             Read the full Story
           </a>
         </div>

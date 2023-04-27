@@ -10,7 +10,7 @@ const MainIntro = () => {
         The most versatile furniture system ever created. Designed to fit your
         life, made to move and grow.
       </p>
-      <Link to="/coffee-mugs/products" className="main-intro__link">
+      <Link to="/products" className="main-intro__link">
         Explore our products
       </Link>
     </section>

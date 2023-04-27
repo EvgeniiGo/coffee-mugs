@@ -28,7 +28,7 @@ const ProductCard = ({ id, name, price, oldPrice = undefined }: PropsType) => {
           className="product-card__image"
           onClick={handleNavigation}
         />
-        <a href={`/coffee-mugs/product/${id}`} className="product-card__link">
+        <a href={`/product/${id}`} className="product-card__link">
           Explore mug
         </a>
         {oldPrice !== undefined ? (

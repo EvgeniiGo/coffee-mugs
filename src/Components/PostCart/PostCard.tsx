@@ -12,7 +12,7 @@ const PostCart = ({ id, title, subtitle, date }: PropsType) => {
 
   const navigate = useNavigate();
   const handleNavigation = (): void => {
-    navigate(`/coffee-mugs/posts/${id}`);
+    navigate(`/posts/${id}`);
   };
 
   return (
