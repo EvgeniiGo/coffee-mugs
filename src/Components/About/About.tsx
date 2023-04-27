@@ -15,6 +15,26 @@ const About = ({ authors }: PropsType) => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const introImg: string = new URL(
+      `../../images/about/about-intro.jpg`,
+      import.meta.url
+    ).href;
+    const aboutImageElement = document.querySelector(
+      ".about__image"
+    ) as HTMLElement;
+    aboutImageElement.style.backgroundImage = `url(${introImg})`;
+
+    const parallaxImg: string = new URL(
+      `../../images/about/parallax.jpg`,
+      import.meta.url
+    ).href;
+    const parallaxImageElement = document.querySelector(
+      ".about__parallax"
+    ) as HTMLElement;
+    parallaxImageElement.style.backgroundImage = `url(${parallaxImg})`;
+  }, []);
+
   return (
     <div className="about">
       <Intro
