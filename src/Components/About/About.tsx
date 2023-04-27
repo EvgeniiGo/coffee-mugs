@@ -15,25 +15,15 @@ const About = ({ authors }: PropsType) => {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    const introImg: string = new URL(
-      `/src/images/about/about-intro.jpg`,
-      import.meta.url
-    ).href;
-    const aboutImageElement = document.querySelector(
-      ".about__image"
-    ) as HTMLElement;
-    aboutImageElement.style.backgroundImage = `url(${introImg})`;
+  const introImg: string = new URL(
+    `/src/images/about/about-intro.jpg`,
+    import.meta.url
+  ).href;
 
-    const parallaxImg: string = new URL(
-      `/src/images/about/parallax.jpg`,
-      import.meta.url
-    ).href;
-    const parallaxImageElement = document.querySelector(
-      ".about__parallax"
-    ) as HTMLElement;
-    parallaxImageElement.style.backgroundImage = `url(${parallaxImg})`;
-  }, []);
+  const parallaxImg: string = new URL(
+    `/src/images/about/parallax.jpg`,
+    import.meta.url
+  ).href;
 
   return (
     <div className="about">
@@ -42,10 +32,16 @@ const About = ({ authors }: PropsType) => {
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
       />
       <div className="about__container">
-        <div className="about__image" />
+        <div
+          className="about__image"
+          style={{ backgroundImage: `url(${introImg})` }}
+        />
         <Introductions />
         <Authors authors={authors} />
-        <section className="about__parallax" />
+        <section
+          className="about__parallax"
+          style={{ backgroundImage: `url(${parallaxImg})` }}
+        />
         <History />
       </div>
     </div>
