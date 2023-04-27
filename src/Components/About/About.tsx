@@ -17,7 +17,7 @@ const About = ({ authors }: PropsType) => {
 
   useEffect(() => {
     const introImg: string = new URL(
-      `../../images/about/about-intro.jpg`,
+      `/src/images/about/about-intro.jpg`,
       import.meta.url
     ).href;
     const aboutImageElement = document.querySelector(
@@ -26,7 +26,7 @@ const About = ({ authors }: PropsType) => {
     aboutImageElement.style.backgroundImage = `url(${introImg})`;
 
     const parallaxImg: string = new URL(
-      `../../images/about/parallax.jpg`,
+      `/src/images/about/parallax.jpg`,
       import.meta.url
     ).href;
     const parallaxImageElement = document.querySelector(
