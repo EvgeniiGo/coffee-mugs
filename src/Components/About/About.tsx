@@ -15,10 +15,10 @@ const About = ({ authors }: PropsType) => {
     window.scrollTo(0, 0);
   }, []);
 
-  const introImg: string = new URL(
-    `/src/images/about/about-intro.jpg`,
-    import.meta.url
-  ).href;
+  // const introImg: string = new URL(
+  //   `/src/images/about/about-intro.jpg`,
+  //   import.meta.url
+  // ).href;
 
   const parallaxImg: string = new URL(
     `/src/images/about/parallax.jpg`,
@@ -32,10 +32,7 @@ const About = ({ authors }: PropsType) => {
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
       />
       <div className="about__container">
-        <div
-          className="about__image"
-          style={{ backgroundImage: `url(${introImg})` }}
-        />
+        <div className="about__image" />
         <Introductions />
         <Authors authors={authors} />
         <section
