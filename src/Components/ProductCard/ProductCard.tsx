@@ -16,7 +16,7 @@ const ProductCard = ({ id, name, price, oldPrice = undefined }: PropsType) => {
 
   const navigate = useNavigate();
   const handleNavigation = (): void => {
-    navigate(`/coffee-mugs/product/${id}`);
+    navigate(`/product/${id}`);
   };
 
   return (
