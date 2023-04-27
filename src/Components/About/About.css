@@ -25,7 +25,7 @@
 
 .about__parallax {
   height: 340px;
-  /* background-image: url(/src/images/about/parallax.jpg); */
+  background-image: url(../../images/parallax.jpg);
   width: 100vw;
   background-position: 50% 50%;
   background-attachment: fixed;
