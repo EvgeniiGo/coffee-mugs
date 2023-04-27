@@ -14,7 +14,7 @@ const Story = () => {
         line of blind text by the name of Lorem Ipsum decided to leave for the
         far World of Grammar.
       </p>
-      <Link to="/about" className="story__link">
+      <Link to="/coffee-mugs/about" className="story__link">
         Read the full Story
       </Link>
     </section>
