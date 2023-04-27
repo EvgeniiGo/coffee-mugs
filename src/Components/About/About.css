@@ -19,13 +19,13 @@
   width: 100%;
   background-position: 50% 50%;
   margin-bottom: 100px;
-  background-image: url(../../images/about/about-intro.jpg);
+  background-image: url(/src/images/about/about-intro.jpg);
   background-size: cover;
 }
 
 .about__parallax {
   height: 340px;
-  background-image: url(../../images/about/parallax.jpg);
+  background-image: url(/src/images/about/parallax.jpg);
   width: 100vw;
   background-position: 50% 50%;
   background-attachment: fixed;
