@@ -15,16 +15,6 @@ const About = ({ authors }: PropsType) => {
     window.scrollTo(0, 0);
   }, []);
 
-  // const introImg: string = new URL(
-  //   `/src/images/about/about-intro.jpg`,
-  //   import.meta.url
-  // ).href;
-
-  const parallaxImg: string = new URL(
-    `/src/images/about/parallax.jpg`,
-    import.meta.url
-  ).href;
-
   return (
     <div className="about">
       <Intro
@@ -35,10 +25,7 @@ const About = ({ authors }: PropsType) => {
         <div className="about__image" />
         <Introductions />
         <Authors authors={authors} />
-        <section
-          className="about__parallax"
-          style={{ backgroundImage: `url(${parallaxImg})` }}
-        />
+        <section className="about__parallax" />
         <History />
       </div>
     </div>
