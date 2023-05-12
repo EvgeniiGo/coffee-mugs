@@ -13,16 +13,24 @@ type PropsType = {
 const Header = ({ openCart, productsInCart }: PropsType) => {
   function buttonClickHandler() {
     const nav = document.querySelector(".nav") as HTMLElement;
-    nav.classList.add("nav_opened");
+    if (!nav.classList.contains("nav_opened")) {
+      nav.classList.add("nav_opened");
+      console.log("added");
+
+      setTimeout(() => {
+        document.addEventListener("click", closeMenu);
+      }, 0);
+    } else {
+      document.removeEventListener("click", closeMenu);
+    }
 
     function closeMenu() {
       nav.classList.remove("nav_opened");
       document.removeEventListener("click", closeMenu);
+      console.log("closed");
     }
 
-    setTimeout(() => {
-      document.addEventListener("click", closeMenu);
-    }, 0);
+    console.log(nav);
   }
 
   const quantity: number =

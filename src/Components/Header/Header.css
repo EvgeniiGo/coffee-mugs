@@ -6,8 +6,7 @@
   gap: 20px;
   position: relative;
   min-width: 320px;
-  width: 100vw;
-  max-width: 940px;
+  width: 100%;
 }
 
 .header::before {
@@ -78,12 +77,14 @@
 
 .nav {
   position: absolute;
+  left: 0;
+  top: calc(100% - 2px);
   flex-direction: column;
   width: 100%;
   display: none;
   background-color: white;
-  margin-top: 51px;
   align-items: center;
+  padding: 10px 0;
 }
 
 .nav_opened {
@@ -98,6 +99,10 @@
   line-height: 18px;
   font-weight: 700;
   margin: 2px 0;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .nav__link:hover {
@@ -120,6 +125,7 @@
 @media screen and (min-width: 992px) {
   .header {
     padding: 25px 0;
+    max-width: 940px;
   }
 
   .header__button {
@@ -130,7 +136,6 @@
     display: flex;
     position: relative;
     flex-direction: row;
-    margin-top: 0;
     width: auto;
   }
 
